@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./globals.css";
+import { Route, Routes } from "react-router-dom";
+import RootLayout from "./_root/RootLayout";
+import Home from "./_root/pages/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="flex h-screen">
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route index element={<Home />} />
+          {/* <Route path="/explore" element={<Explore />} />
+           */}
+        </Route>
+      </Routes>
+    </main>
   );
 }
 
